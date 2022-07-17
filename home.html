@@ -27,10 +27,28 @@
         rel="stylesheet">
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .back-to-top {
+            float: right;
+            margin: 20px;
+            position: fixed;
+            bottom: 0;
+            right: 20px;
+        }
+
+        /* cách 2 */
+        #backTop {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-md" id="toptop">
         <div class="container">
             <a class="navbar-brand" href="home.html">
                 <img src="https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/98/4d/3f/984d3f69-b706-ec8b-e379-e2c5213894a3/source/512x512bb.jpg"
@@ -282,7 +300,8 @@
             <div class="new-clothes__header">WEEKLY BEST</div>
             <div class="new-clothes__link">
                 <span class="clothes__link--hover text-center">
-                    <a class="new-clothes__link--item" href="#" style="color: black;">For him <span class="active-link-new"></span></a>
+                    <a class="new-clothes__link--item" href="#" style="color: black;">For him <span
+                            class="active-link-new"></span></a>
                 </span>
                 <span class="clothes__link--hover">
                     <a class="new-clothes__link--item" href="#" style="color: black;">For her </a>
@@ -290,6 +309,27 @@
             </div>
         </div>
     </div>
+
+    <!-- <div class="back-to-top">
+        <button><a href="#toptop"><i class="fas fa-arrow-up"></i></a></button>
+    </div> -->
+    <div class="back-to-top">
+        <button id="backTop"><i class="fas fa-arrow-up"></i></button>
+    </div>
 </body>
+<script>
+    //back to top
+    const backTop = document.getElementById('backTop')
+    backTop.addEventListener('click', function (){
+        document.documentElement.scrollTop = 0
+    })
+    window.addEventListener('scroll', () => {
+        if (document.documentElement.scrollTop > 600) {
+            backTop.style.display = "block"
+        }else {
+            backTop.style.display = "none"
+        }
+    })
+</script>
 
 </html>

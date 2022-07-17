@@ -1,0 +1,7 @@
+/* //thuộc tính để img quay 360 độ */
+img:hover{
+	transform: rotateY(360deg);
+}
+img {
+    transition-duration: 2s;
+}
